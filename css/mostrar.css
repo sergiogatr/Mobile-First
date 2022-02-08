@@ -18,6 +18,8 @@ header {
     margin: 10px;
     height: 20vh;
 
+    gap: 5px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -27,80 +29,65 @@ header {
     color: black;
 }
 
-nav {
-    margin: 10px;
-    height: 10vh;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-
-    background-color: black;
-}
-
-nav > a {
-    background-color: white;
-
-    text-decoration: none;
-    cursor: pointer;
-    padding: 10px;
+img {
     border: 1px solid black;
 }
 
-nav > a:hover {
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-}
-
 header > img {
-    height: 120px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
 
 main {
-    height: calc(60vh - 70px);
+    min-height: calc(70vh - 70px);
     justify-content: space-around;
     color: black;
     background-color: white;
+
+    display: grid;
 }
 
-main > section {
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-    background-color: black;
-
-    width: 90%;
-    height: 50%;
+section {
+    margin: 0 auto;
 }
 
-section > article {
-    background-color: white;
-    width: 50%;
-
-    margin: 5px;
+section > p {
     padding: 5px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: justify;
-    justify-content: space-evenly;
+    width: 220px;
+    margin: 0 auto;
 }
 
-section > article:first-child {
-    margin-right: 0px;
+section > img {
+    height: 50px;
+    margin: 10px;
+    width: auto;
+    object-fit: cover;
 }
 
+
+/* Footer */
 footer {
     height: 10vh;
 }
 
+
+/* Fuentes */
+h1 {
+    font-size: 15px;
+}
+
+h2 {
+    font-size: 11px;
+}
+
+h3 {
+    font-size: 13px;
+}
+
+
+/* Media */
 @media (orientation:landscape) {
     body {
         background-color: black;
@@ -112,6 +99,10 @@ footer {
     body {
         background-color: white;
         color: black;
+    }
+
+    img {
+        border: none;
     }
 
     header {
@@ -137,11 +128,60 @@ footer {
     }
 
     main > section {
-        background-color: white;
+        background-color: black;
     }
 
-    section > article {
+    section > p {
         background-color: black;
     }
 }
 
+@media only screen and (min-width: 600px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (min-height: 750px) {
+    section > img {
+        height: 100px;
+        width: auto;
+    }
+
+    header > img {
+        height: 120px;
+        width: auto;
+    }
+}
+
+@media only screen and (min-height: 500px) and (min-width: 345px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (min-height: 800px) {
+    section > img {
+        height: 220px;
+        width: auto;
+    }
+
+    header > img {
+        height: 150px;
+        width: auto;
+    }
+}
